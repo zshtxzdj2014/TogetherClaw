@@ -177,7 +177,7 @@ npm start
 
 ### 方式 2: 通过配置文件
 
-创建配置文件 `~/.switchclaw/config.yaml`：
+创建配置文件 `~/.togetherclaw/config.yaml`：
 
 ```yaml
 platforms:
@@ -269,7 +269,7 @@ TogetherClaw 通过 API Keys 调用云服务，不需要本地部署：
 ### 目录结构
 
 ```
-~/.switchclaw/
+~/.togetherclaw/
 ├── config.json              # 应用配置
 ├── connections.json         # 平台连接配置 (API Keys 加密)
 ├── sessions/                # 会话数据
