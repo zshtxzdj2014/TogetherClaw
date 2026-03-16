@@ -39,8 +39,8 @@ TogetherClaw 通过统一的 Web 界面和多会话管理解决这些问题。
 │  │  ┌────▼──────────────────────────────────────────────┐   │   │
 │  │  │ 对话窗口 (当前: ArkClaw)                          │   │   │
 │  │  │ ─────────────────────────────────────────────────│   │   │
-│  │  │ 👤 User: 帮我审查这段代码                        │   │   │
-│  │  │ 🤖 ArkClaw: 我来帮你审查...                      │   │   │
+│  │  │ User: 帮我审查这段代码                          │   │   │
+│  │  │ ArkClaw: 我来帮你审查...                        │   │   │
 │  │  │                                                   │   │   │
 │  │  │ [输入框] 发送到: [ArkClaw ▼] [发送] [广播]      │   │   │
 │  │  └───────────────────────────────────────────────────┘   │   │
@@ -52,8 +52,8 @@ TogetherClaw 通过统一的 Web 界面和多会话管理解决这些问题。
         ┌───────────────────┼───────────────────┐
         │                   │                   │
 ┌───────▼────────────┐  ┌───▼────────────┐  ┌──▼─────────────┐
-│  ArkClaw 平台      │  │ Linclaw 平台   │  │  DuClaw 平台   │
-│                    │  │                │  │                │
+│  ArkClaw 云服务    │  │ Linclaw 云服务 │  │  DuClaw 云服务 │
+│  (字节跳动)        │  │  (七牛云)      │  │  (百度云)      │
 │  API Endpoint      │  │  API Endpoint  │  │  API Endpoint  │
 │  认证: API Key     │  │  认证: API Key │  │  认证: API Key │
 └────────────────────┘  └────────────────┘  └────────────────┘
@@ -68,14 +68,14 @@ TogetherClaw 通过统一的 Web 界面和多会话管理解决这些问题。
 
 ## 支持的 Claw 平台
 
-### 已规划平台
+### 国内云服务商版本
 
-| 平台 | 说明 | 状态 |
-|------|------|------|
-| ArkClaw | ArkClaw 平台接入 | 计划支持 |
-| Linclaw | Linclaw 平台接入 | 计划支持 |
-| QClaw | QClaw 平台接入 | 计划支持 |
-| DuClaw | DuClaw 平台接入 | 计划支持 |
+| 平台 | 厂商 | 特点 | 状态 |
+|------|------|------|------|
+| ArkClaw | 字节跳动（火山引擎） | 云 SaaS 版本，平台接入 | 计划支持 |
+| Linclaw | 七牛云 | 轻量级部署，平台接入 | 计划支持 |
+| QClaw | 腾讯 | 平台接入 | 计划支持 |
+| DuClaw | 百度智能云 | 平台接入 | 计划支持 |
 
 ### 其他平台
 
@@ -91,12 +91,12 @@ TogetherClaw 通过统一的 Web 界面和多会话管理解决这些问题。
 
 ```
 在 ArkClaw 标签页：
-👤 "帮我审查这段代码的安全性"
-🤖 ArkClaw 正在回答...
+User: "帮我审查这段代码的安全性"
+ArkClaw 正在回答...
 
 切换到 Linclaw 标签页：
-👤 "为这个项目生成 API 文档"
-🤖 Linclaw 正在回答...
+User: "为这个项目生成 API 文档"
+Linclaw 正在回答...
 
 两个对话同时进行，互不干扰
 ```
@@ -182,20 +182,20 @@ npm start
 ```yaml
 platforms:
   - id: arkclaw-main
-    name: "ArkClaw Main"
+    name: "ArkClaw (字节跳动)"
     type: arkclaw
     api_endpoint: "https://ark.cn-beijing.volces.com/api/v3"
     api_key: "ark_xxxxxxxxxxxxxxxx"
     model: "default-model"
 
   - id: linclaw-main
-    name: "Linclaw Main"
+    name: "Linclaw (七牛云)"
     type: linclaw
     api_endpoint: "https://api.qiniu.com/linclaw/v1"
     api_key: "lin_xxxxxxxxxxxxxxxx"
 
   - id: duclaw-main
-    name: "DuClaw Main"
+    name: "DuClaw (百度)"
     type: duclaw
     api_endpoint: "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat"
     api_key: "du_xxxxxxxxxxxxxxxx"
@@ -236,10 +236,10 @@ platforms:
 │  │ 当前对话: ArkClaw                              │    │
 │  │ ──────────────────────────────────────────────│    │
 │  │                                                │    │
-│  │ 👤 User (10:30)                               │    │
+│  │ User (10:30)                                 │    │
 │  │ 帮我审查这段代码的安全性                      │    │
 │  │                                                │    │
-│  │ 🤖 ArkClaw (10:30)                            │    │
+│  │ ArkClaw (10:30)                              │    │
 │  │ 我来帮你审查代码的安全性...                   │    │
 │  │ 1. SQL 注入风险...                            │    │
 │  │ 2. XSS 漏洞...                                │    │
